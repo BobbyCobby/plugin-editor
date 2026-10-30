@@ -3,5 +3,5 @@
 	url = https://github.com/microsoft/vcpkg
 [submodule "endless-sky"]
 	path = endless-sky
-	url = https://github.com/quyykk/endless-sky
-	branch = editor-patched
+	url = https://github.com/BobbyCobby/endless-sky
+	branch = plugin-editor-my-fork
