@@ -44,7 +44,7 @@ jobs:
           7z a ${{ env.OUTPUT }} "./install/ci/*"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Editor-win64-continuous
           path: ${{ env.OUTPUT }}
