@@ -46,7 +46,7 @@
       ],
       "platform": "linux"
     },
-    "rapidfuzz",
+    "rapidfuzz-cpp",
     "sdl2"
   ]
 }
