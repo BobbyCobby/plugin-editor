@@ -15,8 +15,8 @@ target_sources(Editor PRIVATE
 	../endless-sky/source/Armament.h
 	../endless-sky/source/AsteroidField.cpp
 	../endless-sky/source/AsteroidField.h
-	../endless-sky/source/Audio.cpp
-	../endless-sky/source/Audio.h
+	../endless-sky/source/audio/Audio.cpp
+	../endless-sky/source/audio/Audio.h
 	../endless-sky/source/BankPanel.cpp
 	../endless-sky/source/BankPanel.h
 	../endless-sky/source/BatchDrawList.cpp
@@ -190,8 +190,8 @@ target_sources(Editor PRIVATE
 	../endless-sky/source/MissionPanel.h
 	../endless-sky/source/Mortgage.cpp
 	../endless-sky/source/Mortgage.h
-	../endless-sky/source/Music.cpp
-	../endless-sky/source/Music.h
+	../endless-sky/source/audio/Music.cpp
+	../endless-sky/source/audio/Music.h
 	../endless-sky/source/NPC.cpp
 	../endless-sky/source/NPC.h
 	../endless-sky/source/NPCAction.cpp
@@ -271,8 +271,8 @@ target_sources(Editor PRIVATE
 	../endless-sky/source/ShipyardPanel.h
 	../endless-sky/source/ShopPanel.cpp
 	../endless-sky/source/ShopPanel.h
-	../endless-sky/source/Sound.cpp
-	../endless-sky/source/Sound.h
+	../endless-sky/source/audio/Sound.cpp
+	../endless-sky/source/audio/Sound.h
 	../endless-sky/source/SoundSet.cpp
 	../endless-sky/source/SoundSet.h
 	../endless-sky/source/SpaceportPanel.cpp
