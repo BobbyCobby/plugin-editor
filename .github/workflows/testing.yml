@@ -3,7 +3,7 @@ name: Build Editor
 on:
   push:
     branches:
-      - your-branch-name
+      - master
   workflow_dispatch:
 
 jobs:
