@@ -1,0 +1,50 @@
+name: Build Editor
+
+on:
+  push:
+    branches:
+      - your-branch-name
+  workflow_dispatch:
+
+jobs:
+  windows_win64:
+    name: Windows x64
+    runs-on: windows-latest
+    env:
+      OUTPUT: Editor-win64-continuous.zip
+      CCACHE_DIR: ${{ github.workspace }}/ccache
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Cache ccache results
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.CCACHE_DIR }}
+          key: ${{ runner.os }}-ccache-${{ github.repository }}-${{ github.ref }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-ccache-${{ github.repository }}-${{ github.ref }}-
+            ${{ runner.os }}-ccache-${{ github.repository }}-
+            ${{ runner.os }}-ccache
+
+      - name: Install development dependencies
+        uses: ./.github/dependencies
+
+      - uses: lukka/get-cmake@latest
+      - uses: lukka/run-vcpkg@v11
+      - uses: lukka/run-cmake@v10
+        with:
+          configurePreset: mingw-ci
+          buildPreset: mingw-ci
+
+      - name: Package Application
+        run: |
+          cmake --install build/ci
+          7z a ${{ env.OUTPUT }} "./install/ci/*"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Editor-win64-continuous
+          path: ${{ env.OUTPUT }}
